@@ -7,5 +7,13 @@ import edu.wpi.first.wpilibj2.command.Subsystem;
  */
 
 public interface Vision extends OffsetProvider, Subsystem {
+    boolean hasValidTargets();
 
+    double getHorizontalOffsetFromCrosshair();
+
+    double getVerticalOffsetFromCrosshair();
+
+    double getTargetArea();
+
+    double getSkew();
 }
