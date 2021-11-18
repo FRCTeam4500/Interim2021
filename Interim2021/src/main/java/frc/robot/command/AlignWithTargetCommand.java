@@ -21,6 +21,9 @@ public class AlignWithTargetCommand extends CommandBase {
     private Vision vision;
 
     /**
+     *Command which aligns the robot to a target on a flat wall.
+     * It generates output values with PID controllers on the x-translational and rotational axes
+     *
      *
      * @param kPt PID params for the translational component
      * @param kIt
@@ -37,12 +40,7 @@ public class AlignWithTargetCommand extends CommandBase {
         this.vision = vision;
         this.swerve = swerve;
     }
-
-    @Override
-    public void initialize() {
-
-    }
-
+    
     @Override
     public void execute() {
         swerve.moveRobotCentric(
@@ -52,19 +50,4 @@ public class AlignWithTargetCommand extends CommandBase {
         );
     }
 
-    @Override
-    public boolean isFinished() {
-        // TODO: Make this return true when this Command no longer needs to run execute()
-        return false;
-    }
-
-
-    protected void end() {
-
-    }
-
-
-    protected void interrupted() {
-
-    }
 }
